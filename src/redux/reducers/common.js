@@ -1,6 +1,4 @@
-const list= [{data:"",id:''}];
-
-
+const list= [];
 export const reducer=(state = list, action) => {
     switch (action.type) {
 

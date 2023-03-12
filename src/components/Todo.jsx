@@ -30,9 +30,9 @@ const Todo = () => {
           }}
         />
       </div>
-      <div className="mt-5 w-60">
+      <div className="mt-5 w-60 mr-3">
         {state.reducer.map((todo) => {
-          if (todo.id !== "") {
+          if (todo.data !== "") {
             return (
               <div className="min-w-full  flex justify-between bg-white mt-2 items-center p-2">
                 {todo.data}
