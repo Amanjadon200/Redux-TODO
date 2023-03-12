@@ -8,6 +8,8 @@ export const reducer=(state = list, action) => {
             console.log(state)
             const newList=state.filter((todo)=>{console.log(todo);return todo.id!==action.id})
             return[...newList]
+        case "REMOVE_TODO":
+            return []
 
         default:
             return state

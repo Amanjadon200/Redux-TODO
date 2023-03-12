@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToDo, deleteToDo } from "../redux/actions";
+import { addToDo, deleteToDo,removeToDo } from "../redux/actions";
 const Todo = () => {
   const [toDoData, setToDoData] = useState("");
   const state = useSelector((state) => {
@@ -16,7 +16,7 @@ const Todo = () => {
       <div className="flex flex-col items-center">
       <div className="flex items-center w-64">
         <input
-          className="p-2 border-2 h-10 w-60 outline-none"
+          className="p-2 h-10 w-60 outline-none"
           placeholder="enter your todo"
           onChange={(e) => {
             setToDoData(e.target.value);
@@ -48,6 +48,7 @@ const Todo = () => {
             return "";
           }
         })}
+        {state.reducer.length>0 && <button className="bg-white py-1 px-2 mt-2" onClick={()=>{dispatch(removeToDo())}}>clear all todo's</button>}
       </div>
       </div>
     </div>
